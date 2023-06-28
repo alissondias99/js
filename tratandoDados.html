@@ -1,0 +1,32 @@
+<!--Referente a aula 6 do curso de JS do Curso em vídeo-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Part 1
+        var nome = prompt("Qual seu nome?");
+        document.write("Prazer em te conhecer " + nome);
+        */
+
+        //Part 2
+        /*var n1 = prompt("Digite um número");
+        var n2 = prompt("Digite outro número");
+        var s = parseFloat(n1) + parseFloat(n2); //Para trasnsfromar uma string em int
+        // n.toString() ou string(n) para ir de int para string
+        document.write(`A soma de ${n1} e ${n2} é ${s}`);*/
+
+        //Part 3, configurando números
+
+        let num = 1435.5
+        document.write(num.toLocaleString("pt-BR", {style: 'currency', currency: 'BRL'}) + '<br>'); //Mudando o valor para reais
+        document.write(num.toLocaleString("pt-BR", {style: 'currency', currency: 'USD'}) + '<br>'); // Dolar
+        document.write(num.toLocaleString("pt-BR", {style: 'currency', currency: 'EUR'}) + '<br>'); // e Euro, util para um conversor de moedas por exemplo
+
+    </script>
+</body>
+</html>

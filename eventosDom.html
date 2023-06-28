@@ -1,0 +1,71 @@
+<!--Referente as aulas 10 do Curso em video de JS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #area{
+        background-color: green;
+        width: 300px;
+        height: 300px;
+        line-height: 300px;
+        text-align: center;
+        font-size: 50pt;
+    }
+
+    #area:hover{
+        cursor: pointer;
+    }
+</style>
+<body>
+    <!-- Parte 1
+    <div id="area" onclick="clicou()" onmouseenter="entrou()" onmouseout="saiu()">interaja</div>-
+    <div id="area">interaja</div>
+
+    <script>
+        var d = document.getElementById('area');
+        // usando os event listeners
+        d.addEventListener('click', clicou);
+        d.addEventListener('mouseenter', entrou);
+
+        //Também é possivel declarar a função dentro do event
+        d.addEventListener('mouseout', function saiu(){
+            d.innerText = "Saiu";
+            d.style.background = "green";
+        });
+        
+        function clicou() {
+            d.innerText = "Clicou";
+            d.style.background = "red";
+        }
+
+        function entrou(){
+            d.innerText = "Entrou";
+            d.style.background = "blue";
+        } 
+    </script>
+    -->
+    <!--Parte 2-->
+    <h1>Somando valores</h1>
+    <input type="number" name="tntn1" id="tnt1">
+    +
+    <input type="number" name="tntn2" id="tnt2">
+    <input type="button" value="Somar" onclick="calcular()">
+    <div id="res">Resultado:</div>
+
+    <script>
+        function calcular(){
+            var tnt1 = document.getElementById('tnt1');
+            var tnt2 = document.getElementById('tnt2');
+            var res = document.getElementById('res');   
+            var n1 = Number(tnt1.value);
+            var n2 = Number(tnt2.value);
+            var s = n1 + n2;
+            res.innerHTML = `A soma entre ${n1} e ${n2} é ${s}`;
+        }
+    </script>
+</body>
+</html>

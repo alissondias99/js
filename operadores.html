@@ -1,0 +1,68 @@
+<!--Referente as aulas 7 e 8 do curso de JS do curso em vídeo-->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+    </script>
+</body>
+<!--Referente as aulas 7 e 8 do curso de JS do curso em video-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        5+2 // =7
+        5-2 // =3             
+        5*2 // =10       
+        5/2 // =2.5           
+        5%2 // =1 resto de divisão
+        5**2 // =25
+        /*
+        Ordem de precedência
+        1º = () 
+        2º = ** 
+        3º *, / e % na ordem que aparecem
+        4º e ultimo + e -
+        */
+
+        // auto atribuição e auto incremento
+        var n = 3;
+        n += 4; // =  n = n + 4
+        n++; // = n += 1 ou n = n + 1
+
+        // Operadores logicos 
+        // ! negação, testa se é a condição NÃO é verdadera, caso NÃO for verdadeira, da true
+        // && conjunção, testa se todas as condições são verdadeiras, se sim true, caso uma seja falsa da false
+        // || disjunção, testa se uma das condições é verdadeira, se apenas um for da true se todas foram falsas da false
+
+        var n1 = 5
+        var n2 = 7;
+        console.log(n1 != n2 && n2 % 2 == 0); // a primeira parte é verdadeira, mas como a segunda é false, o resultado será false
+        console.log(n1 != n2 || n2 % 2 == 0); // agora dara true porque uma das condições é verdadeira.
+        console.log(n1 != n2); // true porque 5 é diferente de 7
+        // a ordem de precedência é !, && e ||
+
+        /* Considerando todos os operadores vistos aqui, a ordem de precedência é, primeiro os aritméticos, 
+        depois os relacionais (<, >, <= etc), e por ultimo os logicos, cada um seguindo sua propria ordem*/
+
+        //Operador ternário
+
+        var media = 9;
+        //          ↓         s i n t a x e           ↓  
+        console.log(media>=7 ? "Aprovado" : "Reprovado");
+        //          teste     caso for true  caso for false
+
+        var num = 3;
+        console.log(num + 2 == 4 ? 4: 5);
+    </script>
+</body>
+</html>

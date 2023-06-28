@@ -1,0 +1,38 @@
+<!--Referente as aulas 9 do Curso em video de JS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background: #3f6dee;
+        color: white;
+        font: normal 10pt Arial;
+    }
+</style>
+<body>
+    <h1>Manipulando o DOM</h1>
+    <p>Aqui ta o resultado</p>
+    <p>Aprendendo a usar o <strong>Dom</strong> em JS</p>
+    <div id="msg" name="msg">Clique em mim</div>
+
+    <script>
+        var corpo = document.body;
+        var p1 = document.getElementsByTagName("p")[1];
+     //seleciona todos os itens pelo nome da tag, especifica qual item pelo indice
+     corpo.style.background = "black";
+     p1.style.color = "blue";
+     document.write(p1.innerHTML + "<br>");
+     document.write(p1.innerText);
+
+     var d1 = document.getElementById("msg");
+     d1.style.background = "green";
+     //d1.innerText = "Estou aguardando..."
+     var d2 = document.getElementsByName("msg")[0];
+
+    </script>
+</body>
+</html>
