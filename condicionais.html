@@ -1,0 +1,29 @@
+<!--Referente as aulas 11 e 12 do Curso em video de JS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="km">Velocidade do carro:
+        <input type="number" id="km">
+        </label>
+        <input type="button" value="Verificar" onclick="verificar()">
+        <script>
+        function verificar() {
+        var velocidade = document.getElementById("km");
+        var vel = Number(velocidade.value);
+        if (vel > 60) {
+            alert("Você está acima da velocidade máxima permitida e foi multado.");
+        } else {
+            alert("Você está dentro do limite de velocidade permitido.");
+        }
+    }   
+    </script>
+</body>
+</html>
+
+
