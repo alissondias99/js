@@ -1,0 +1,71 @@
+<!--Referente a primeira atividade da aula 13 do Curso em video de jS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+</head>
+<style>
+
+    body{
+        background-color: rgb(204, 190, 156);
+    }
+    
+    #container {
+        width: 100%;
+        text-align: center;
+        color: #FFF;
+    }
+
+    #caixa{
+        background-color: #FFF;    
+        border-radius: 10px;
+        margin: 0 auto;
+        width: fit-content;
+        text-align: center;
+        width: 500px;
+        height: 400px;
+    }
+
+    #foto{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    p{
+        padding-top: 15px;
+        font-size: 15pt;
+    }
+
+</style>
+<body>
+
+    <div id="container">
+        <h1>HORA DO DIA</h1>
+    </div>
+        <div id="caixa">
+            <p id="msg"></p>
+            <img id="foto" src="https://www.publicdomainpictures.net/pictures/250000/nahled/morning-1515613752PtB.jpg" alt="">
+        </div>
+
+        <script>
+            var agora = new Date();// pega as informações atuais do sistema em relação a data e hora
+            var hora = agora.getHours();// seleciona a hora atual
+            var img = document.getElementById("foto");// seleciona o elemento img com o id foto
+            var mensagem = document.getElementById("msg")// seleciona o elemento p com id msg
+            mensagem.innerText = `Agora são ${hora} horas` // Insere um texto que muda junto com o horario
+            if (hora > 12){
+                document.body.style.background = "rgb(160,111,94)" //Se a condição for verdadeira, muda a condiguração do background do body
+                // O document é obrigatório, se não o body não sera afetado
+                img.src = "https://p0.pxfuel.com/preview/799/675/774/sunset-sky-clouds-nature.jpg" //Se a condição for verdadeira, muda a imagem exebida
+            } else if (hora >18){
+                document.body.style.background = "rgb(75,76,77)"
+                img.src = "https://p1.pxfuel.com/preview/744/590/371/moon-sky-night-dark.jpg"
+            }
+        </script>
+    
+</body>
+</html>
