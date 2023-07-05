@@ -1,0 +1,45 @@
+<!--Refente as aulas 13 e 14 do curso em vídeo de JS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        c= 1
+        while (c <= 6){
+            console.log(`Laço de número ${c}`)
+            c++
+        }
+        //ou
+        console.log("Pausa")
+        do {
+            console.log(`Laço de número ${c}`)
+            c++
+        } while (c <= 12)
+        */
+        //While e do-while são essencialmente a mesma coisa e têm funções similares. A maior diferença é que o do-while executa o bloco antes de verificar se a condição é verdadeira.
+        //for tem 3 areas
+        for (var c = 1; c <= 10; c++){
+    //a inicializção o teste logico e por ultimo o incremento
+            console.log(`Laço de número ${c}`)
+        }
+
+        //Fazendo o fatorial
+        let resultado = 1
+        for (let i = 6; i >= 1; i--) {
+          var fat = resultado *= i
+        }
+        console.log(fat);
+        //ou
+        num = 6
+        for (var i = num-1; i >= 1; i--) {
+        num = num * i
+        }
+        console.log(num)
+    </script>
+</body>
+</html>
