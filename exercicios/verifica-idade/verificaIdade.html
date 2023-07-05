@@ -1,0 +1,134 @@
+<!--Referente a segunda atividade da aula 13 do Curso em video de jS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+</head>
+<style>
+
+    body{
+        background-color: rgb(29, 69, 179);
+        font: normal 15pt Arial;
+    }
+    
+    header {
+        text-align: center;
+        color: #FFF;
+    }
+
+    #caixa{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        background-color: #FFF;    
+        border-radius: 10px;
+        margin: 0 auto;
+        width: 550px;
+    }
+
+    #caixa *{
+        margin-left: 10px;
+        margin-top: 10px;
+        font-size: 14pt;
+    }
+
+    p{
+        padding-top: 15px;
+        font-size: 15pt;
+    }
+
+    #caixa button{
+        width: 100px;
+        font-size: 10pt;
+    }
+
+    #foto{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+</style>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+
+        <section>
+            <div id="caixa">
+                <label for="nasc">Digite o ano do seu nascimento:
+                    <input type="number" id="nasc">
+                </label>
+                <br>
+                <P>Sexo:
+                    <input type="radio" name="sexo" value="Masculino">Masculino
+                    <input type="radio" name="sexo" value="Feminino">Feminino
+                </P>
+                <br>
+                <button onclick="verificaIdade()">Verificar</button>
+                <p id="msg">Preencha os dados para ver o resultado</p>
+                
+                
+            </div>
+        </section>
+
+        <script>
+            var nasc = document.getElementById("nasc"); 
+            var agora = new Date();
+            var ano = agora.getFullYear();
+            var mensagem = document.getElementById("msg");
+            const radios = document.getElementsByName("sexo");
+            var genero = undefined;
+            var img = document.createElement("img");
+            img.setAttribute("id", "foto");
+           
+            function verificaIdade(){
+
+                var dataNasc = Number(nasc.value);// Quando uma ou mais variaveis executam calculos, elas precisam ser declarads dentro do escopo da função, porque se não forem o calculo será errado
+                if(dataNasc > ano){
+                    alert('O ano digitado não pode ser maior que o ano atual')
+                }else if(dataNasc < 1900){
+                    alert('O ano digitado não pode ser menor que 1900');
+                   
+                } else {
+                    var idade = ano - dataNasc;
+                    let sexoSelecionado = "";
+                for (const radio of radios) {
+                    if (radio.checked) {
+                    sexoSelecionado = radio.value;
+                    break;
+                    }
+                }
+
+                if (sexoSelecionado == "Masculino") {
+                    mensagem.innerHTML = `Você é um homem com ${idade} anos de idade`;
+                    
+                } else if (sexoSelecionado == "Feminino") {
+                    mensagem.innerHTML = `Você é uma mulher com ${idade} anos de idade`
+                    
+                } else {
+                alert('Preencha todos os dados corretamente')
+                } 
+                }
+
+                mensagem.style.textAlign = "center";
+                if( idade > 0 && idade <=10){
+                    img.setAttribute("src", "fotos/CRIANÇA.png")
+                } else if ( idade <= 20){
+                    img.setAttribute("src", "fotos/JOVEM.png")
+                } else if ( idade < 60){
+                    img.setAttribute("src", "fotos/ADULTO.png")
+                } else{
+                    img.setAttribute("src", "fotos/IDOSO.png")
+                }
+                mensagem.appendChild(img);
+                }
+        </script>
+</body>
+</html>
+</body>
+</html>
