@@ -1,0 +1,130 @@
+<!--Atividade referente as aulas 13 e 14 do curso em video de JS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+</head>
+<style>
+
+    body{
+        background-color: rgb(29, 69, 179);
+        font: normal 15pt Arial;
+    }
+    
+    header {
+        text-align: center;
+        color: #FFF;
+    }
+
+    #caixa{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #FFF;    
+        border-radius: 10px;
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    #caixa *{
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    p{
+        padding-top: 15px;
+        font-size: 15pt;
+    }
+
+    #caixa button{
+        width: 100px;
+    }
+
+   
+
+</style>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+
+        <section>
+            <div id="caixa">
+
+                <label for="inicio">Inicio:
+                    <input type="number" id="inicio">
+                </label>
+
+                <label for="fim">Fim:
+                    <input type="number" id="fim">
+                </label>
+
+                <label for="passo">Passo:
+                    <input type="number" id="passo">
+                </label>
+                
+                <button onclick="contador()">Contar</button>
+
+                <p id="msg">
+
+                </p>
+                
+            </div>
+        </section>
+
+        <script>
+            var inicio = document.getElementById('inicio');
+            var fim = document.getElementById('fim');
+            var passo = document.getElementById('passo');
+            var msg = document.getElementById('msg'); 
+
+            function contador() {
+                msg.innerHTML = ""
+                var valorIni = Number(inicio.value);
+                var valorFim = Number(fim.value);
+                var valorPasso = Number(passo.value);
+                if(valorIni == '' || valorFim == '' || valorPasso == ''){
+                    msg.innerText = "Preencha todos os campos com valores e tente novamente"
+                } else if (valorFim == valorIni){
+                    msg.innerText = "Os valores do inicio e do fim não podem ser iguais"
+                } else if(valorPasso < 0){
+                    msg.innerText = "O valor do passo não pode ser menor ou igual a 0"
+                }
+                 else  if (valorPasso > valorFim && valorIni <= valorFim) {
+                    msg.innerText = "O valor do passo não pode ser mair que o valor do fim."
+                } else {
+
+                    //Contagem progressiva
+                    if( valorIni <= valorFim){
+                        while(valorIni <= valorFim){
+                   msg.innerHTML += `${valorIni} &#x1F449`
+                   //A concatenação "+=" deve ser incluída no código, caso contrário, será exibido somente o último laço, e não a contagem completa.
+                   valorIni += valorPasso
+
+                   //ou
+                   /* for (let c = valorIni; c <= valorFim; c += valorPasso){
+                    msg.innerHTML += `${valorIni}`
+                    O resultado seria o mesmo
+                    */
+                    }
+                    msg.innerHTML += "&#x1F3C1 FIM!!!"
+
+                    //Contagem regressiva
+                    } else{
+                        while(valorIni >= valorFim){
+                        msg.innerHTML += `${valorIni} &#x1F449`
+                        valorIni -= valorPasso
+                    }
+                    msg.innerHTML += "&#x1F3C1 FIM!!!"
+                    
+                }
+            } 
+                
+            }
+        </script>
+</body>
+</html>
+</body>
+</html>
