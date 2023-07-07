@@ -1,0 +1,105 @@
+<!--Atividade referente as aulas 13 e 14 do curso em video de JS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<style>
+
+    body{
+        background-color: rgb(29, 69, 179);
+        font: normal 15pt Arial;
+    }
+    
+    header {
+        text-align: center;
+        color: #FFF;
+    }
+
+    #caixa{
+        background-color: #FFF;    
+        border-radius: 10px;
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    #caixa *{
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+
+    #tabuada{
+        width: 150px;
+    }
+
+   
+
+</style>
+<body>
+    <header>
+        <h1>Calculadora de tabuada</h1>
+    </header>
+
+        <section>
+            <div id="caixa">
+
+                <label for="num">Tabuada do:
+                    <input type="number" id="num">
+                </label>
+
+                <br>
+
+                <label for="fim">Até o:
+                    <input type="number" id="fim">
+                </label>
+
+                <br>
+                
+                <button onclick="calcular()">Mostrar tabuada</button>
+                
+                <p id="tabuada"  placeholder="Digite um número acima" ></p>
+            </div>
+        </section>
+
+        <script>
+           
+
+            let num = document.getElementById("num");
+            let tabuada = document.getElementById("tabuada");
+            let fim = document.getElementById("fim");
+
+            
+            function calcular(){
+                tabuada.innerText = "";
+                let valorNum = Number(num.value);
+                let valorIni = 0;
+                let valorFim = Number(fim.value);
+
+                if(valorFim<0){
+                    alert("O valor final não pode ser menor que 0")
+                } else if (valorNum == ""){
+                    alert("Digite um número")
+                } else{
+                    for(let i = valorIni; i <= valorFim; i++){
+                   /* Na primeira parte do laço, é declarada uma variável 'i' com o mesmo valor da variável 'valorNum', que por sua vez contém o valor do número da tabuada a ser calculada.
+                    Na segunda parte, é verificado se 'i' tem um valor menor ou igual ao da variável 'valorFim' (que contém o valor do último número da tabuada).
+                    E na última parte, caso a segunda parte seja verdadeira, o valor de 'i' é incrementado em 1.*/
+                    var mult = valorNum * i;//O objetivo do laço é multiplicar o valor inicial da tabuada pelo valor de 'i' até que 'i' se torne igual ao valor final, conforme definido no laço acima.
+                   tabuada.innerText += `${valorNum} x ${i} = ${mult.toFixed(2)}\n`// Exibe o valor a cada iteração.
+                    /*ou
+                    while(valorIni <= valorFim){
+                    var mult = valorNum * valorIni;//O objetivo do laço é multiplicar o valor inicial da tabuada pelo valor de 'i' até que 'i' se torne igual ao valor final, conforme definido no laço acima.
+                   tabuada.innerText += `${valorNum} x ${valorIni} = ${mult.toFixed(2)}\n`// Exibe o valor a cada iteração.
+                   valorIni++*/
+                }
+            }
+            }
+        </script>
+</body>
+</html>
+</body>
+</html>
