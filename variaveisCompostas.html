@@ -1,0 +1,38 @@
+<!--Refente a aula 15 do curso em video de JS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nuns = [5, 6, 2, 9, 7]; //Uma variavel com multiplos valores, um array
+        console.log(nuns);// exibe o array completo mas sem formatação
+
+        nuns[5] = 4; //Difine um valor para o array na posição especificada, nesse caso, cria a posição 5 define o valor 4 para ela
+        console.log(nuns);
+
+        nuns.push(3);// Coloca o numero defino no ultima posição
+        console.log(nuns);
+
+        nuns.sort(); //Organiza o array de forma crescente
+        console.log(nuns);
+
+        console.log(nuns[3]);//exibe o valor da posição definida, nesse caso a terceira
+
+        //Um jeito de exibir o array valor por valor sem precisar de varios consoles.log é
+        for (var pos = 0; pos < nuns.length; pos++){
+            console.log(`Posição ${pos} com valor ${nuns[pos]}`)
+        }
+        //ou
+
+        for (let pos in nuns){
+            console.log(`Posição ${pos} com valor ${nuns[pos]}`)
+        }// Esse tipo de sintaxe do for só funciona para arrays e objetos
+        //Nesses dois casos ambos seram exibindos os valores organizado por conta o .sort()
+
+    </script>
+</body>
+</html>

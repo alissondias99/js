@@ -1,0 +1,38 @@
+<!--Refente a aula 16 do curso em video de JS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //var num = Number(prompt("Digite um numero"))
+        //            ↓Parametro↓
+        function imparPar (n){
+            //↓ A ç ã o ↓
+            if (n % 2 == 0){
+                return 'Par'
+                //↑Possivel retorno (cada função só pode ter um retorno).
+
+            } else if (n % 2 == 1){
+                return 'Impar'
+                //↑Possivel retorno (cada função só pode ter um retorno).
+            }
+            // ↑ A ç ã o ↑ 
+
+        }
+
+        console.log(imparPar(2));
+        //          ↑chamada↑
+
+        function soma (n1, n2){
+            return n1 + n2;
+        }
+
+        console.log(soma(22, 5));
+    </script>
+</body>
+</html>
